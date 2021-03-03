@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget{
   _MyAppState createState() => _MyAppState();
 }
 class _MyAppState extends State<MyApp>{
-  String imagen="falso.png";
+  String imagen="Imagen/False.png";
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,12 +32,13 @@ class _MyAppState extends State<MyApp>{
             style: TextStyle(
               color: Colors.white,
               fontSize: 40,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Poppins'
             ),
           ),
               Image(
               image: AssetImage(imagen),
-                height: 2000,
+                height: 200,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -49,8 +50,17 @@ class _MyAppState extends State<MyApp>{
                     imagen='Images/False.png';
                   });
                 },
-                child: Text('Falso'),
-                color: Colors.teal[100],
+                child: Text(
+                  'Falso',
+                style: TextStyle(
+                  color: Colors.white
+                ),
+                ),
+                color: Colors.red[400],
+                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30)),
+              ),
+              SizedBox(
+                width: 50,
               ),
               FlatButton(
                 onPressed: (){
@@ -58,8 +68,14 @@ class _MyAppState extends State<MyApp>{
                     imagen='Images/Verdadero.png';
                   });
                 },
-                child: Text('Verdadero'),
-                color: Colors.teal[100],
+                child: Text(
+                    'Verdadero',
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                ),
+                color: Colors.teal[900],
+                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30)),
               )
             ],
           )
